@@ -1,5 +1,7 @@
 """Test pypkg_template.fibonacci module."""
 
+from __future__ import annotations
+
 from pypkg_template import fibonacci
 
 _NAIVE_TOL: int = 30
