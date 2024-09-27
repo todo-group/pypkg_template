@@ -2,28 +2,31 @@
 
 from __future__ import annotations
 
+import pytest
+
 from pypkg_template import fibonacci
+from tests.conftest import EXACT
 
 _NAIVE_TOL = 30
 
 
-def test_naive(fx_exact: dict[int, int]) -> None:
+@pytest.mark.parametrize(("n", "ref"), EXACT.items())
+def test_naive(n: int, ref: int) -> None:
     """Test naive."""
-    for n, ref in fx_exact.items():
-        if n > _NAIVE_TOL:
-            continue
-        assert fibonacci.naive(n) == ref
+    if n > _NAIVE_TOL:
+        pytest.skip("Too slow.")
+    assert fibonacci.naive(n) == ref
 
 
-def test_closuredp(fx_exact: dict[int, int]) -> None:
+@pytest.mark.parametrize(("n", "ref"), EXACT.items())
+def test_closuredp(n: int, ref: int) -> None:
     """Test closuredp."""
     fib = fibonacci.closuredp()
-    for n, ref in fx_exact.items():
-        assert fib(n) == ref
+    assert fib(n) == ref
 
 
-def test_classdp(fx_exact: dict[int, int]) -> None:
+@pytest.mark.parametrize(("n", "ref"), EXACT.items())
+def test_classdp(n: int, ref: int) -> None:
     """Test ClassDP."""
     fib = fibonacci.ClassDP()
-    for n, ref in fx_exact.items():
-        assert fib(n) == ref
+    assert fib(n) == ref
