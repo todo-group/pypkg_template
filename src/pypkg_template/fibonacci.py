@@ -21,15 +21,26 @@ def naive(n: int) -> int:
     ----------
     n : int
         The index of the Fibonacci number to calculate.
+
+    Returns
+    -------
+    int
+        The nth Fibonacci number.
     """
     _argcheck(n)
-    if n in (0, 1):
+    if n in {0, 1}:
         return n
     return naive(n - 1) + naive(n - 2)
 
 
 def closuredp() -> Callable[[int], int]:
-    """Return a closure that calculates the nth Fibonacci number."""
+    """Return a closure that calculates the nth Fibonacci number.
+
+    Returns
+    -------
+    Callable[[int], int]
+        A closure that calculates the nth Fibonacci number.
+    """
     mem = {0: 0, 1: 1}
 
     def fib_closure(n: int) -> int:
@@ -39,6 +50,11 @@ def closuredp() -> Callable[[int], int]:
         ----------
         n : int
             The index of the Fibonacci number to calculate.
+
+        Returns
+        -------
+        int
+            The nth Fibonacci number.
         """
         _argcheck(n)
         if n not in mem:
@@ -62,6 +78,11 @@ class ClassDP:
         ----------
         n : int
             The index of the Fibonacci number to calculate.
+
+        Returns
+        -------
+        int
+            The nth Fibonacci number.
         """
         _argcheck(n)
         if n not in self.__mem:

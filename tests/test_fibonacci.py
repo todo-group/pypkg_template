@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pypkg_template import fibonacci
 
-_NAIVE_TOL: int = 30
+_NAIVE_TOL = 30
 
 
 def test_naive(fx_exact: dict[int, int]) -> None:

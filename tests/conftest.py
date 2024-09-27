@@ -5,9 +5,15 @@ from __future__ import annotations
 import pytest
 
 
-@pytest.fixture()
+@pytest.fixture
 def fx_exact() -> dict[int, int]:
-    """Return a dictionary of exact Fibonacci numbers."""
+    """Return a dictionary of exact Fibonacci numbers.
+
+    Returns
+    -------
+    dict[int, int]
+        A dictionary of exact Fibonacci numbers.
+    """
     return {
         0: 0,
         1: 1,
