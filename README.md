@@ -2,10 +2,10 @@
 
 Python package template with the modern toml-based style.
 
-
 See [here](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html) for more details.
 
 ## How to use
+
 ```bash
 git clone https://github.com/todo-group/pypkg_template.git
 cd pypkg_template
