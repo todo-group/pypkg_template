@@ -7,7 +7,13 @@ import pytest
 from pypkg_template import fibonacci
 from tests.conftest import EXACT
 
-_NAIVE_TOL = 30
+_NAIVE_TOL = 20
+
+
+def test_ng() -> None:
+    """Test with negative n."""
+    with pytest.raises(ValueError, match=r"n must be non-negative, got .*\."):
+        fibonacci.naive(-1)
 
 
 @pytest.mark.parametrize(("n", "ref"), EXACT.items())
