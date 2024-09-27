@@ -1,8 +1,0 @@
-# Enable everything
-select = ["ALL"]
-
-# ...except these
-# ANN10: annotate `self` and `cls`
-# S101: use of `assert`
-# T20: use of `print`
-ignore = ["ANN10", "S101", "T20"]
