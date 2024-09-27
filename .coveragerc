@@ -1,0 +1,2 @@
+[run]
+omit = src/pypkg_template/_version.py
