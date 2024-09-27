@@ -33,7 +33,7 @@ write_to = "src/pypkg_template/_version.py"
 package-dir = { "" = "src" }
 
 [project.optional-dependencies]
-dev = ["mypy", "pyright", "pytest", "pytest-cov", "ruff"]
+dev = ["furo", "mypy", "pyright", "pytest", "pytest-cov", "ruff", "sphinx"]
 
 [tool.ruff]
 line-length = 120
