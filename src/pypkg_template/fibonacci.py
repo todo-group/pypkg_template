@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 
 def _argcheck(n: int) -> None:
     if n < 0:
-        msg = f"n must be >=0, got {n}."
+        msg = f"n must be non-negative, got {n}."
         raise ValueError(msg)
 
 
