@@ -1,15 +1,27 @@
-# pypkg_template
+# 📦 pypkg_template
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![CI](https://github.com/todo-group/pypkg_template/actions/workflows/pytest.yaml/badge.svg)](https://github.com/todo-group/pypkg_template/actions/workflows/pytest.yaml)
 [![docs](https://github.com/todo-group/pypkg_template/actions/workflows/docs.yaml/badge.svg)](https://github.com/todo-group/pypkg_template/actions/workflows/docs.yaml)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
-Python package template with the modern toml-based style.
+Python package template with the modern [toml-based style](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html).
 
-See [here](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html) for more details.
+## ☑ Features
 
-## How to use
+- Modern `pyproject.toml`-based configuration
+  - Dynamic versioning with `setuptools_scm`
+  - Typing support with `py.typed`
+- Testing with `pytest`
+  - Cross-platform CI integrations
+  - Coverage measurement with `pytest-cov`
+- Various linters
+  - `ruff` for linting, formatting, and import sorting
+  - `mypy`/`pyright` for static type checking
+- Documentation with `sphinx`
+  - Building with CI (WIP)
+
+## 🛠 How to use
 
 ### `pip` development
 
