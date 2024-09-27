@@ -6,11 +6,22 @@ See [here](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html)
 
 ## How to use
 
+### `pip` development
+
 ```bash
 git clone https://github.com/todo-group/pypkg_template.git
 cd pypkg_template
 pip install pip -U
-# Simple installation
-# For development purpose, use `pip install -e .[dev]` instead.
-pip install -e .
+pip install -e .[dev]
+```
+
+### `pipenv` development
+
+```bash
+git clone https://github.com/todo-group/pypkg_template.git
+cd pypkg_template
+pip install pip -U
+pip install pipenv
+pipenv install --dev
+pipenv shell
 ```
