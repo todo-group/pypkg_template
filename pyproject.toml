@@ -33,4 +33,59 @@ write_to = "src/pypkg_template/_version.py"
 package-dir = { "" = "src" }
 
 [project.optional-dependencies]
-dev = ["black", "pytest", "ruff"]
+dev = ["mypy", "pyright", "pytest", "pytest-cov", "ruff"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+preview = true
+select = ["ALL"]
+ignore = [
+  # Conflicts with ruff format
+  "COM812",
+  "COM819",
+  "D206",
+  "D300",
+  "E111",
+  "E114",
+  "E117",
+  "ISC001",
+  "ISC002",
+  "Q000",
+  "Q001",
+  "Q002",
+  "Q003",
+  "W191",
+
+  # Custom
+  "ANN10",   # missing-type-XXX
+  "CPY",     # flake8-copyright
+  "E74",     # ambiguous-XXX-name
+  "EM",      # flake8-errmsg
+  "ERA",     # eradicate
+  "PLR2004", # magic-value-comparison
+  "S101",    # assert
+  "T20",     # flake8-print
+  "TRY003",  # raise-vanilla-args
+]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"__init__.py" = [
+  "D104", # undocumented-public-package
+  "F401", # unused-import
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.mypy]
+strict = true
+files = ["src/**/*.py", "tests/**/*.py"]
+
+[tool.pyright]
+include = ["**/*.py"]
+strict = ["**/*.py"]
