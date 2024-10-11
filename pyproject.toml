@@ -90,4 +90,10 @@ files = ["src/**/*.py", "tests/**/*.py"]
 include = ["**/*.py"]
 
 [tool.pytest.ini_options]
-addopts = "--cov=src"
+addopts = "--cov=src --cov-report=term"
+
+[tool.coverage.run]
+omit = ["src/pypkg_template/_version.py"]
+
+[tool.coverage.report]
+exclude_also = ["if TYPE_CHECKING:"]
