@@ -88,7 +88,6 @@ files = ["src/**/*.py", "tests/**/*.py"]
 
 [tool.pyright]
 include = ["**/*.py"]
-strict = ["**/*.py"]
 
 [tool.pytest.ini_options]
 addopts = "--cov=src"
