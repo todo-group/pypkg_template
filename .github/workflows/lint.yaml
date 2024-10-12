@@ -13,21 +13,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  ruff:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Ruff (lint)
-        uses: chartboost/ruff-action@v1
-
-      - name: Ruff (format)
-        uses: chartboost/ruff-action@v1
-        with:
-          args: "format --check"
-
-  typecheck:
+  pre-commit:
     runs-on: ubuntu-latest
 
     steps:
@@ -35,12 +21,6 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: 3.12
 
-      - run: |
-          pip install pip -U
-          pip install -e .[dev]
-
-      - run: mypy
-
-      - run: pyright
+      - uses: pre-commit/action@v3.0.1
