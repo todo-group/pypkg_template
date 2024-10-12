@@ -12,7 +12,7 @@ Python package template with the modern [toml-based style](https://setuptools.py
 - Modern `pyproject.toml`-based configuration
   - Dynamic versioning with `setuptools_scm`
   - Typing support with `py.typed`
-- Testing with `pytest`
+- Testing with `nox`/`pytest`
   - Cross-platform CI integrations
   - Coverage measurement with `pytest-cov`
 - Various linters
@@ -23,7 +23,7 @@ Python package template with the modern [toml-based style](https://setuptools.py
 
 ## 🛠 How to use
 
-### `pip` development
+### 🐍 `pip` development
 
 ```bash
 git clone https://github.com/todo-group/pypkg_template.git
@@ -32,7 +32,7 @@ pip install pip -U
 pip install -e .[dev]
 ```
 
-### `pipenv` development
+### 🗃 `pipenv` development
 
 ```bash
 git clone https://github.com/todo-group/pypkg_template.git
@@ -41,4 +41,18 @@ pip install pip -U
 pip install pipenv
 pipenv install --dev
 pipenv shell
+```
+
+### 🎨 Format/lint
+
+```bash
+# Run all linters
+pre-commit run -a
+```
+
+### 🧪 Test
+
+```bash
+# Run unit tests in an isolated venv
+nox
 ```
