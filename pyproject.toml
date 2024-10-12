@@ -99,9 +99,6 @@ files = ["src/**/*.py", "tests/**/*.py"]
 [tool.pyright]
 include = ["**/*.py"]
 
-[tool.pytest.ini_options]
-addopts = "--cov=src --cov-report=term"
-
 [tool.coverage.run]
 omit = ["src/pypkg_template/_version.py"]
 
