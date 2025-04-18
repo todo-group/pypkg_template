@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import dataclasses
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
@@ -64,12 +65,15 @@ def closuredp() -> Callable[[int], int]:
     return fib_closure
 
 
+@dataclasses.dataclass
 class ClassDP:
     """A callable class internally memoizing the Fibonacci sequence."""
 
+    _mem: dict[int, int]
+
     def __init__(self) -> None:
         """Initialize ClassDP."""
-        self.__mem = {0: 0, 1: 1}
+        self._mem = {0: 0, 1: 1}
 
     def __call__(self, n: int) -> int:
         """Calculate the nth Fibonacci number. Results are memoized.
@@ -85,6 +89,6 @@ class ClassDP:
             The nth Fibonacci number.
         """
         _argcheck(n)
-        if n not in self.__mem:
-            self.__mem[n] = self(n - 1) + self(n - 2)
-        return self.__mem[n]
+        if n not in self._mem:
+            self._mem[n] = self(n - 1) + self(n - 2)
+        return self._mem[n]
