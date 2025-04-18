@@ -11,11 +11,3 @@ pypkg\_template.fibonacci module
    :members:
    :undoc-members:
    :show-inheritance:
-
-Module contents
----------------
-
-.. automodule:: pypkg_template
-   :members:
-   :undoc-members:
-   :show-inheritance:
