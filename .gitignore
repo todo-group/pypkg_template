@@ -8,7 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
+./build/
 develop-eggs/
 dist/
 downloads/
@@ -161,3 +161,7 @@ cython_debug/
 
 # setuptools-scm
 src/pypkg_template/_version.py
+
+# GitHub pages
+docs/build/*
+!docs/build/.nojekyll
