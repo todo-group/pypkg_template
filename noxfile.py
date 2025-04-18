@@ -7,7 +7,7 @@ from nox import Session
 @nox.session
 def tests(session: Session) -> None:
     """Run the test suite."""
-    session.install("pytest", "pytest-cov")
+    session.install("pytest", "pytest-cov", "pytest-sugar")
     # Need to use `-e`
     session.install("-e", ".")
     session.run("pytest", "--cov=src")
