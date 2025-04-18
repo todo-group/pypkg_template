@@ -6,7 +6,7 @@ import dataclasses
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from collections.abc import Callable
+    import collections.abc
 
 
 def _argcheck(n: int) -> None:
@@ -20,12 +20,12 @@ def naive(n: int) -> int:
 
     Parameters
     ----------
-    n : int
+    n : `int`
         The index of the Fibonacci number to calculate.
 
     Returns
     -------
-    int
+    `int`
         The nth Fibonacci number.
     """
     _argcheck(n)
@@ -34,12 +34,12 @@ def naive(n: int) -> int:
     return naive(n - 1) + naive(n - 2)
 
 
-def closuredp() -> Callable[[int], int]:
-    """Return a closure that calculates the nth Fibonacci number.
+def closuredp() -> collections.abc.Callable[[int], int]:
+    r"""Return a closure that calculates the nth Fibonacci number.
 
     Returns
     -------
-    Callable[[int], int]
+    `collections.abc.Callable`\[\[`int`\], `int`\]
         A closure that calculates the nth Fibonacci number.
     """
     mem = {0: 0, 1: 1}
@@ -49,12 +49,12 @@ def closuredp() -> Callable[[int], int]:
 
         Parameters
         ----------
-        n : int
+        n : `int`
             The index of the Fibonacci number to calculate.
 
         Returns
         -------
-        int
+        `int`
             The nth Fibonacci number.
         """
         _argcheck(n)
@@ -80,12 +80,12 @@ class ClassDP:
 
         Parameters
         ----------
-        n : int
+        n : `int`
             The index of the Fibonacci number to calculate.
 
         Returns
         -------
-        int
+        `int`
             The nth Fibonacci number.
         """
         _argcheck(n)
