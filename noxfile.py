@@ -11,3 +11,4 @@ def tests(session: Session) -> None:
     # Need to use `-e`
     session.install("-e", ".")
     session.run("pytest", "--cov=src")
+    session.run("pytest", "--doctest-modules", "src")
