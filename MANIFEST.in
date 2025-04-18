@@ -1,0 +1,5 @@
+exclude noxfile.py Pipfile
+global-exclude .*
+prune docs
+prune tests
+prune .github
