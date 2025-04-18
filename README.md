@@ -19,7 +19,7 @@ Python package template with the modern [toml-based style](https://setuptools.py
   - `ruff` for linting, formatting, and import sorting
   - `mypy`/`pyright` for static type checking
 - Documentation with `sphinx`
-  - Building with CI (WIP)
+  - Building with CI
 
 ## 🛠 How to use
 
