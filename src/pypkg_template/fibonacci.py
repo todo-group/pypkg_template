@@ -27,6 +27,19 @@ def naive(n: int) -> int:
     -------
     `int`
         The nth Fibonacci number.
+
+    Examples
+    --------
+    >>> naive(0)
+    0
+    >>> naive(1)
+    1
+    >>> naive(2)
+    1
+    >>> naive(3)
+    2
+    >>> naive(4)
+    3
     """
     _argcheck(n)
     if n in {0, 1}:
@@ -41,6 +54,20 @@ def closuredp() -> collections.abc.Callable[[int], int]:
     -------
     `collections.abc.Callable`\[\[`int`\], `int`\]
         A closure that calculates the nth Fibonacci number.
+
+    Examples
+    --------
+    >>> fib = closuredp()
+    >>> fib(0)
+    0
+    >>> fib(1)
+    1
+    >>> fib(2)
+    1
+    >>> fib(3)
+    2
+    >>> fib(4)
+    3
     """
     mem = {0: 0, 1: 1}
 
@@ -67,12 +94,27 @@ def closuredp() -> collections.abc.Callable[[int], int]:
 
 @dataclasses.dataclass
 class ClassDP:
-    """A callable class internally memoizing the Fibonacci sequence."""
+    """A callable class internally memoizing the Fibonacci sequence.
+
+    Examples
+    --------
+    >>> fib = ClassDP()
+    >>> fib(0)
+    0
+    >>> fib(1)
+    1
+    >>> fib(2)
+    1
+    >>> fib(3)
+    2
+    >>> fib(4)
+    3
+    """
 
     _mem: dict[int, int]
 
     def __init__(self) -> None:
-        """Initialize ClassDP."""
+        """Initialize `ClassDP`."""
         self._mem = {0: 0, 1: 1}
 
     def __call__(self, n: int) -> int:
