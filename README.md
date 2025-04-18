@@ -56,3 +56,17 @@ pre-commit run -a
 # Run unit tests in an isolated venv
 nox
 ```
+
+### 📜 Build docs.
+
+```bash
+# Build docs and output to `docs/build`
+sphinx-build docs/source docs/build
+```
+
+### 📦 Build package
+
+```bash
+# Build sdist/wheel and output to `dist`
+python3 -m build
+```
