@@ -59,6 +59,8 @@ nox
 
 ### 📜 Build docs.
 
+Documentation is automatically deployed on push: see <https://todo-group.github.io/pypkg_template/>.
+
 ```bash
 # Build docs and output to `docs/build`
 sphinx-build docs/source docs/build
