@@ -27,3 +27,8 @@ jobs:
           pip install -e .[dev]
 
       - run: sphinx-build docs/source docs/build -a -W
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: html-docs
+          path: ./docs/build
