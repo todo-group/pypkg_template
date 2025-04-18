@@ -26,4 +26,4 @@ jobs:
           pip install pip -U
           pip install -e .[dev]
 
-      - run: sphinx-build docs/source docs/build --fail-on-warning
+      - run: sphinx-build docs/source docs/build -a -W
