@@ -6,10 +6,10 @@
 pypkg_template documentation
 ============================
 
-This is the documentation for the `pypkg_template` package.
+This is the documentation for the :py:obj:`pypkg_template` package.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   modules
+   pypkg_template

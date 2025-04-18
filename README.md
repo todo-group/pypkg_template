@@ -1,7 +1,7 @@
 # 📦 pypkg_template
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![CI](https://github.com/todo-group/pypkg_template/actions/workflows/pytest.yaml/badge.svg)](https://github.com/todo-group/pypkg_template/actions/workflows/pytest.yaml)
+[![CI](https://github.com/todo-group/pypkg_template/actions/workflows/pytest.yaml/badge.svg)](https://github.com/todo-group/pypkg_template/actions/workflows/test.yaml)
 [![docs](https://github.com/todo-group/pypkg_template/actions/workflows/docs.yaml/badge.svg)](https://github.com/todo-group/pypkg_template/actions/workflows/docs.yaml)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
@@ -19,7 +19,7 @@ Python package template with the modern [toml-based style](https://setuptools.py
   - `ruff` for linting, formatting, and import sorting
   - `mypy`/`pyright` for static type checking
 - Documentation with `sphinx`
-  - Building with CI (WIP)
+  - Building with CI
 
 ## 🛠 How to use
 
@@ -55,4 +55,18 @@ pre-commit run -a
 ```bash
 # Run unit tests in an isolated venv
 nox
+```
+
+### 📜 Build docs.
+
+```bash
+# Build docs and output to `docs/build`
+sphinx-build docs/source docs/build
+```
+
+### 📦 Build package
+
+```bash
+# Build sdist/wheel and output to `dist`
+python3 -m build
 ```

@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 
+import dataclasses
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from collections.abc import Callable
+    import collections.abc
 
 
 def _argcheck(n: int) -> None:
@@ -19,12 +20,12 @@ def naive(n: int) -> int:
 
     Parameters
     ----------
-    n : int
+    n : `int`
         The index of the Fibonacci number to calculate.
 
     Returns
     -------
-    int
+    `int`
         The nth Fibonacci number.
     """
     _argcheck(n)
@@ -33,12 +34,12 @@ def naive(n: int) -> int:
     return naive(n - 1) + naive(n - 2)
 
 
-def closuredp() -> Callable[[int], int]:
-    """Return a closure that calculates the nth Fibonacci number.
+def closuredp() -> collections.abc.Callable[[int], int]:
+    r"""Return a closure that calculates the nth Fibonacci number.
 
     Returns
     -------
-    Callable[[int], int]
+    `collections.abc.Callable`\[\[`int`\], `int`\]
         A closure that calculates the nth Fibonacci number.
     """
     mem = {0: 0, 1: 1}
@@ -48,12 +49,12 @@ def closuredp() -> Callable[[int], int]:
 
         Parameters
         ----------
-        n : int
+        n : `int`
             The index of the Fibonacci number to calculate.
 
         Returns
         -------
-        int
+        `int`
             The nth Fibonacci number.
         """
         _argcheck(n)
@@ -64,27 +65,30 @@ def closuredp() -> Callable[[int], int]:
     return fib_closure
 
 
+@dataclasses.dataclass
 class ClassDP:
     """A callable class internally memoizing the Fibonacci sequence."""
 
+    _mem: dict[int, int]
+
     def __init__(self) -> None:
         """Initialize ClassDP."""
-        self.__mem = {0: 0, 1: 1}
+        self._mem = {0: 0, 1: 1}
 
     def __call__(self, n: int) -> int:
         """Calculate the nth Fibonacci number. Results are memoized.
 
         Parameters
         ----------
-        n : int
+        n : `int`
             The index of the Fibonacci number to calculate.
 
         Returns
         -------
-        int
+        `int`
             The nth Fibonacci number.
         """
         _argcheck(n)
-        if n not in self.__mem:
-            self.__mem[n] = self(n - 1) + self(n - 2)
-        return self.__mem[n]
+        if n not in self._mem:
+            self._mem[n] = self(n - 1) + self(n - 2)
+        return self._mem[n]

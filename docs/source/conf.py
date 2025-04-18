@@ -21,6 +21,7 @@ author = "SS"
 
 extensions = [
     "sphinx.ext.autodoc",
+    "sphinx.ext.intersphinx",
     "sphinx.ext.napoleon",
     "sphinx.ext.viewcode",
 ]
@@ -34,3 +35,7 @@ extensions = [
 
 html_theme = "furo"
 # html_static_path = ["_static"]
+
+intersphinx_mapping = {"python": ("https://docs.python.org/3", None)}
+
+default_role = "any"
