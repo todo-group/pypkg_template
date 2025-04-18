@@ -1,7 +1,7 @@
 # 📦 pypkg_template
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![CI](https://github.com/todo-group/pypkg_template/actions/workflows/pytest.yaml/badge.svg)](https://github.com/todo-group/pypkg_template/actions/workflows/pytest.yaml)
+[![CI](https://github.com/todo-group/pypkg_template/actions/workflows/pytest.yaml/badge.svg)](https://github.com/todo-group/pypkg_template/actions/workflows/test.yaml)
 [![docs](https://github.com/todo-group/pypkg_template/actions/workflows/docs.yaml/badge.svg)](https://github.com/todo-group/pypkg_template/actions/workflows/docs.yaml)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
